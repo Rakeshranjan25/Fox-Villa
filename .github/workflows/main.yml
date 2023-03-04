@@ -16,10 +16,10 @@ jobs:
         # specify the path to package-lock.json inside the client directory
       - name: Build Application
         run: npm run build
-        working-directory: ./client/build
+        working-directory: ./client
       - name: Test Application
         run: npm run test
-        working-directory: ./client/build
+        working-directory: ./client
       - name: Deploy to Production
         uses: peaceiris/actions-gh-pages@v3
         with:
