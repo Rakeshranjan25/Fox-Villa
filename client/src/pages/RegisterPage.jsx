@@ -1,18 +1,24 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Await, Link } from "react-router-dom";
 import axios from "axios";
 
 export default function RegisterPage() {
     const [name,setName] = useState('');
     const [email,setEmail] = useState('');
     const [password,setPassword] = useState('');
-    function registerUser(ev){
+    async function registerUser(ev){
         ev.preventDefault();
-        axios.post('/register', {
-            name,
-            email,
-            password,
-        });
+        try{
+            await axios.post('/register', {
+                name,
+                email,
+                password,
+            });
+            alert('Registration is successfull. Now you can login');
+        } catch(e){
+          alert('Registration failed please try again later');
+        }
+      
     }
      
     return(
