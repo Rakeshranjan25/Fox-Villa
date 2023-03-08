@@ -12,8 +12,8 @@ const jwtSecret = 'hsdfbisjbksdblkgsd45sfnjs';
 
 app.use(express.json());
 app.use(cors({
-    Credentials: true,
     origin:'http://127.0.0.1:5173',
+    credentials: true
    }));
 
 mongoose.connect(process.env.MONGO_URL);
