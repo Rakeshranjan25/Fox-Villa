@@ -12,7 +12,7 @@ const bcryptSalt = bcrypt.genSaltSync(10);
 const jwtSecret = 'hsdfbisjbksdblkgsd45sfnjs';
 
 app.use(express.json());
-app.use(cookieParser()); 
+app.use(cookieParser());
 app.use(cors({
     origin:'http://127.0.0.1:5173',
     credentials: true
@@ -67,7 +67,6 @@ app.get('/profile', (req,res) =>{
   } else{
     res.json(null);
   }
-  res.json({token});
 })
 
-app.listen(3000);
+app.listen(4000);

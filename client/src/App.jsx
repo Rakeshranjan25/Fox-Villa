@@ -6,9 +6,10 @@ import Layout from './Layout';
 import RegisterPage from './pages/RegisterPage';
 import axios from 'axios';
 import { UserContextProvider } from './UserContext';
-import { useEffect } from 'react';
 
-  axios.defaults.baseURL='http://127.0.0.1:3000';
+
+
+  axios.defaults.baseURL='http://127.0.0.1:4000';
   axios.defaults.withCredentials = true;
   
 function App() {
@@ -21,7 +22,7 @@ function App() {
        <Route path="/register" element={<RegisterPage/>} />
        </Route>
      </Routes>
-    </UserContextProvider>
+   </UserContextProvider>
   )
 }
 
